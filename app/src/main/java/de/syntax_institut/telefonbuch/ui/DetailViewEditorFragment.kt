@@ -32,12 +32,11 @@ class DetailViewEditorFragment : Fragment() {
 
         binding.edName.setText(args.nameID)
         binding.edPhoneNumber.setText(args.numberID)
-        var name:String
-        var number:String
         val position = args.positionID
+
         binding.btnSave.setOnClickListener {
-            name = binding.edName.text.toString()
-            number = binding.edPhoneNumber.text.toString()
+            val name:String = binding.edName.text.toString()
+            val number:String = binding.edPhoneNumber.text.toString()
             if (name != "" && number != "") {
                 val contact = Contact(name, number)
                 contacts[position] = contact
@@ -46,10 +45,10 @@ class DetailViewEditorFragment : Fragment() {
 
 
             }
-            binding.ibBack.setOnClickListener {
-                val actions = DetailViewEditorFragmentDirections.actionDetailViewEditorFragmentToDetailViewFragment(name, number, position)
-                findNavController().navigate(actions)
+
             }
+        binding.ibBack.setOnClickListener {
+            findNavController().navigateUp()
         }
 
 

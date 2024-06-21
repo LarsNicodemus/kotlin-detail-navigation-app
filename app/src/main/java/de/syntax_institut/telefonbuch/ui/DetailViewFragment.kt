@@ -43,8 +43,7 @@ class DetailViewFragment : Fragment() {
         }
 
         binding.ibBack.setOnClickListener {
-            val action = DetailViewFragmentDirections.actionDetailViewFragmentToPhoneBookFragment()
-            findNavController().navigate(action)
+            findNavController().navigateUp()
         }
     }
 

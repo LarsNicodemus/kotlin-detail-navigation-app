@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Telefonbuch</string>
+    <string name="add">Hinzufügen</string>
+    <string name="phoneNumber">Telefonnummer</string>
+    <string name="name">Name</string>
+    <string name="contactPicture">Kontakt Bild</string>
+</resources>

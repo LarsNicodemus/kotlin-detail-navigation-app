@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Telefonbuch" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/SI_Purple</item>
+        <item name="colorPrimaryVariant">@color/SI_DeepPurple</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/SI_Grey3</item>
+        <item name="colorSecondaryVariant">@color/SI_Yellow</item>
+        <item name="colorOnSecondary">@color/SI_Grey1</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/SI_Grey4</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>

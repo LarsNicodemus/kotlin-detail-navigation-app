@@ -2,15 +2,18 @@ package de.syntax_institut.telefonbuch.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import de.syntax_institut.telefonbuch.data.Datasource
 import de.syntax_institut.telefonbuch.data.model.Contact
 import de.syntax_institut.telefonbuch.databinding.ListItemBinding
+import de.syntax_institut.telefonbuch.ui.PhoneBookFragmentDirections
 
 /**
  * Diese Klasse organisiert mithilfe der ViewHolder Klasse das Recycling
  */
 class ItemAdapter(
-    private val dataset: List<Contact>
+    private val dataset: MutableList<Contact>
 ) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
     /**
@@ -31,10 +34,15 @@ class ItemAdapter(
      * die vom ViewHolder bereitgestellten Parameter erhalten die Information des Listeneintrags
      */
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        val item = dataset[position]
+        val contact = dataset[position]
 
-        holder.binding.tvItemName.text = item.name
-        holder.binding.tvItemNumber.text = item.number
+        holder.binding.tvItemName.text = contact.name
+        holder.binding.tvItemNumber.text = contact.number
+        holder.binding.contactCard.setOnClickListener {
+            val action = PhoneBookFragmentDirections.actionPhoneBookFragmentToDetailViewFragment(contact.name, contact.number, position)
+            holder.itemView.findNavController().navigate(action)
+            notifyItemChanged(position)
+        }
     }
 
     /**

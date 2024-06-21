@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/phoneBookFragment">
+
+    <fragment
+        android:id="@+id/phoneBookFragment"
+        android:name="de.syntax_institut.telefonbuch.ui.PhoneBookFragment"
+        android:label="fragment_phone_book"
+        tools:layout="@layout/fragment_phone_book" >
+        <action
+            android:id="@+id/action_phoneBookFragment_to_detailViewFragment"
+            app:destination="@id/detailViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailViewFragment"
+        android:name="de.syntax_institut.telefonbuch.ui.DetailViewFragment"
+        android:label="fragment_detail_view"
+        tools:layout="@layout/fragment_detail_view" >
+        <argument
+            android:name="nameID"
+            app:argType="string" />
+        <argument
+            android:name="numberID"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detailViewFragment_to_detailViewEditorFragment"
+            app:destination="@id/detailViewEditorFragment" />
+        <argument
+            android:name="positionID"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_detailViewFragment_to_phoneBookFragment"
+            app:destination="@id/phoneBookFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailViewEditorFragment"
+        android:name="de.syntax_institut.telefonbuch.ui.DetailViewEditorFragment"
+        android:label="DetailViewEditorFragment" >
+        <argument
+            android:name="nameID"
+            app:argType="string" />
+        <argument
+            android:name="numberID"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detailViewEditorFragment_to_detailViewFragment"
+            app:destination="@id/detailViewFragment" />
+        <argument
+            android:name="positionID"
+            app:argType="integer" />
+    </fragment>
+</navigation>

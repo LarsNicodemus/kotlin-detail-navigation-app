@@ -1,48 +1,51 @@
-# Telefonbuch
+# Kotlin Detail Navigation App
 
-Wir, das Team der Phony-Software GmbH, entwickeln eine innovative Telefonbuch-App, die es den Benutzern ermöglicht, ihre Kontakte einfach zu verwalten und effizient zu kommunizieren.
-Um unseren Benutzern ein optimales Erlebnis zu bieten und ihre Anforderungen zu erfüllen, benötigen wir dringend eine Detailansicht für die Kontakte in unserer Telefonbuch-App.
+This project is an Android app developed as part of the Android module at the Syntax Institute. It is written in **Kotlin** using **Android Studio** and focuses on key navigation concepts such as **Navigation Components**, **Bottom Navigation**, **Fragments**, **Activities**, and **Intents**. The app demonstrates how to build a multi-screen Android application with seamless navigation and a user-friendly interface.
 
-### 1. TELEFONBUCH - Details
+## About the App
 
-Es besteht bereits ein Prototyp, dieser ist allerdings etwas veraltet und benutzt noch keine Fragmente.
-1. Erstelle ein neues Fragment in das du das bestehende Design übernimmst
-2. Erstelle ein neues Fragment in dem du die Detailansicht designst und erstellst
-3. Richte einen NavGraph ein um zwischen den Fragmenten navigieren zu können
-4. Ersetze den Inhalt der `activity_main` sodass nur noch Fragmente innerhalb der App angezeigt werden
+The Kotlin Detail Navigation App showcases how to implement navigation in an Android app using modern practices. It includes features like **Bottom Navigation** for switching between main sections, **Fragments** for modular UI components, and **Intents** for navigating between activities. The app also uses the **Navigation Component** to simplify navigation logic and manage back stack behavior.
 
-<p align="center">
-<img src=img/img1.png width="25%"/>
-<img src=img/img2.png width="25%"/>
-</p>
-<p align="center">
-   <b>Abbildung 1:</b> Das Fragment mit der Telefonliste (links) und die Detailansicht (rechts)
-</p>
+## Features
 
-### BONUS - Kontakt bearbeiten
+- **Bottom Navigation**: Switch between different sections of the app using a bottom navigation bar.
+- **Fragments**: Use fragments to create modular and reusable UI components.
+- **Navigation Component**: Implement navigation between fragments and activities using the Navigation Component.
+- **Intents**: Navigate between activities and pass data using intents.
+- **Activities**: Manage different screens and their lifecycles.
 
-Bei einem Klick auf den 'Edit' Button soll zu einem neuen Screen navigiert werden, in welchem der
-ausgewählte Kontakt bearbeitet werden kann. Dabei soll man einen neuen Namen oder eine neue Telefonnummer speichern können.  
-Achtung: die geänderten Informationen sollen auch in der Liste richtig angezeigt werden
+## Technologies and Concepts
 
-<details>
-  <summary>Tipp</summary>
-  
-  Wenn wir die gleichen Daten in verschiedenen Fragmenten brauchen können wir diese einfach in die MainActivity legen und dann darauf aus den Fragmenten zugreifen.
-  Beispiel:
-  
-  ```kotlin
-  val mainActivity = activity as MainActivity
-  val contacts = mainActivity.contacts
-  ```
-Wenn wir dann Änderungen an diesen contacts vornehmen, gelten diese für alle Fragmente, die ihre contacts auf die selbe Weise laden.
-Später wird diese Funktionalität vom ViewModel übernommen, das zentrale Speichern von Daten in der MainActivity ist nur eine Möglichkeit.
-  
-</details>
+- **Kotlin**: The programming language used for Android development.
+- **Bottom Navigation**: A user-friendly way to switch between app sections.
+- **Fragments**: Modular UI components that can be reused across the app.
+- **Navigation Component**: Simplify navigation logic and manage back stack behavior.
+- **Intents**: Navigate between activities and pass data.
+- **Activities**: Represent individual screens and manage their lifecycles.
+- **Android Studio**: The official IDE for Android development.
 
-<p align="center">
-<img src=img/img3.png width="25%"/>
-</p>
-<p align="center">
-   <b>Abbildung 1:</b> Der Bearbeitungs-Screen
-</p>
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/LarsNicodemus/kotlin-detail-navigation-app.git
+Open the project in Android Studio.
+
+Build and run the app on an Android emulator or a physical device.
+
+### Usage
+Use the Bottom Navigation Bar to switch between different sections of the app.
+
+Navigate between Fragments using the Navigation Component.
+
+Use Intents to navigate to a new activity and pass data between screens.
+
+Observe how Activities and Fragments manage their lifecycles during navigation.
+
+### Contributing
+Contributions are welcome! Please create a pull request or open an issue to suggest improvements or report bugs.
+
+### License
+This project is licensed under the MIT License. For more information, see the LICENSE file.
+
+Note: This app was developed as part of the Android module at the Syntax Institute and is primarily intended for educational purposes. It focuses on teaching navigation concepts such as Bottom Navigation, Fragments, Navigation Component, Activities, and Intents in Android apps.
